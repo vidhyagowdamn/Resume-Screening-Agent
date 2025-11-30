@@ -1,44 +1,60 @@
+Resume Screening Agent
+
+The Resume Screening Agent is an AI-powered evaluation tool that analyzes how well a candidate's resume aligns with a given job description. It provides a structured, objective assessment designed to support HR teams, recruiters, and automated hiring workflows.
+
+What the Agent Provides
+
+Match Score (0–100)
+
+Short alignment summary
+
+Key strengths extracted from the resume
+
+Identified gaps or risks
+
+Final recommendation:
+Strong Fit, Possible Fit, or Not a Fit
 
 
-Resume Screening Agent — Project Description
+Evaluation Criteria (Weighted)
 
-This project implements an AI-powered Resume Screening Agent that evaluates how well a candidate’s resume matches a given job description. The system generates:
+1. Skills & Tools Match
+Required technologies
+Nice-to-have skills
 
-A numeric match score (0–100)
-
-A brief alignment summary
-
-Key strengths of the candidate
-
-Gaps or risks relative to the job
-
-A final recommendation: “Strong fit,” “Possible fit,” or “Not a fit.”
-
-
-The evaluation process is based on weighted criteria, prioritized as follows:
-
-1. Skills & Tools Match — Required and nice-to-have technologies.
-
-
-2. Experience Relevance — Similar roles, responsibilities, domain, and impact.
-
-
-3. Seniority Level Fit — Years of experience, project complexity, leadership.
-
-
-4. Education & Certifications — Highlighted only if important to the JD.
-
-
-5. Additional Requirements — Location, work authorization, language, time zone, etc.
+2. Experience Relevance
+Similar roles and responsibilities
+Domain experience
+Project impact and achievements
 
 
 
-The scoring follows a defined scale:
+3. Seniority Level Fit
+Years of experience
+Project complexity
+Leadership or ownership roles
 
-85–100: Strong fit
 
-70–84: Possible fit
 
-Below 70: Not a fit
+4. Education & Certifications
+Considered only if important to the job posting
+
+5. Additional Requirements
+Location
+Work authorization
+Language
+Time zone
+Any role-specific constraints
+
+
+
+Scoring Scale
+
+Score Range	Interpretation
+85–100	⭐ Strong Fit
+70–84	⚠ Possible Fit
+Below 70	❌ Not a Fit
+
+
 
 
