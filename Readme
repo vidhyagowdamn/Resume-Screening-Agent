@@ -1,59 +1,91 @@
-Resume Screening Agent
-
-The Resume Screening Agent is an AI-powered evaluation tool that analyzes how well a candidate's resume aligns with a given job description. It provides a structured, objective assessment designed to support HR teams, recruiters, and automated hiring workflows.
-
-What the Agent Provides
-
-Match Score (0–100)
-
-Short alignment summary
-
-Key strengths extracted from the resume
-
-Identified gaps or risks
-
-Final recommendation:
-Strong Fit, Possible Fit, or Not a Fit
 
 
-Evaluation Criteria (Weighted)
+My agent is a Resume Screening Agent that evaluates how well a candidate’s resume matches a given job description and produces a structured, human-readable report. It is designed to support recruiters, HR teams, and hiring managers in shortlisting candidates faster and more objectively.
 
-1. Skills & Tools Match
-Required technologies
-Nice-to-have skills
+What the agent does
 
-2. Experience Relevance
-Similar roles and responsibilities
-Domain experience
-Project impact and achievements
+Takes a PDF resume and a job description as input.
 
+Extracts and cleans the resume text, then compares it against the job description.
 
+Generates:
 
-3. Seniority Level Fit
-Years of experience
-Project complexity
-Leadership or ownership roles
+A match score (0–100)
+
+A short alignment summary
+
+Key strengths of the candidate relative to the JD
+
+Gaps or risks (missing skills, experience, or requirements)
+
+A final recommendation: “Strong Fit”, “Possible Fit”, or “Not a Fit” based on the scoring scale:
+
+85–100: Strong Fit
+
+70–84: Possible Fit
+
+Below 70: Not a Fit
 
 
 
-4. Education & Certifications
-Considered only if important to the job posting
 
-5. Additional Requirements
-Location
-Work authorization
-Language
-Time zone
-Any role-specific constraints
+Features
 
+Focuses on skills & tools match, experience relevance, seniority level, education/certifications (when important in the JD), and additional requirements (location, work authorization, language, time zone, etc.).
+
+Handles multiple resumes and returns results in a standardized JSON structure, making it easy to integrate into other systems.
+
+Clear explanation of why a candidate scored high/low via strengths and gaps lists, not just a black-box score.
 
 
-Scoring Scale
+Limitations
 
-Score Range	Interpretation
-85–100	⭐ Strong Fit
-70–84	⚠ Possible Fit
-Below 70	❌ Not a Fit
+Performance depends on the quality of the input resume (poorly formatted PDFs or images may reduce accuracy).
+
+Currently optimized for text-based, English resumes and JDs.
+
+It does not make final hiring decisions; it is meant as a decision-support tool, not a replacement for human review.
+
+
+Tools, APIs & models used
+
+Backend: Python + Flask to build the API server, define routes, receive uploaded resumes, and return JSON responses.
+
+Frontend: React for the UI where users upload PDF resumes, enter/paste the job description, and view results.
+
+NLP pipeline:
+
+pdf_reader.py – extracts raw text from uploaded PDF resumes.
+
+text_cleaner.py – cleans and normalizes text (removing noise, fixing spacing, etc.).
+
+resume_ranker.py – compares resume text to the job description, calculates the match score, identifies strengths/gaps, and produces the final recommendation.
+
+
+The frontend calls the Flask backend via JSON APIs, and the results are displayed in a React component (e.g., Results.js).
+
+
+Setup / how to run
+
+1. Backend (Flask)
+
+Install Python dependencies from requirements.txt.
+
+Run the Flask server (e.g., python app.py). This starts the API that accepts PDF uploads and returns evaluation results as JSON.
+
+
+
+2. Frontend (React)
+
+Install Node dependencies (npm install or yarn).
+
+Start the React app (npm start / yarn start).
+
+The frontend allows users to upload resumes, submit the job description, and calls the Flask API to show the score, summary, strengths and gaps.
+
+
+
+3. The system can be deployed with the backend and frontend hosted together, and a separate Gradio/Streamlit-style demo can be added on top if required for quick evaluation.
 
 
 
