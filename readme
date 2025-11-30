@@ -1,0 +1,44 @@
+
+
+Resume Screening Agent — Project Description
+
+This project implements an AI-powered Resume Screening Agent that evaluates how well a candidate’s resume matches a given job description. The system generates:
+
+A numeric match score (0–100)
+
+A brief alignment summary
+
+Key strengths of the candidate
+
+Gaps or risks relative to the job
+
+A final recommendation: “Strong fit,” “Possible fit,” or “Not a fit.”
+
+
+The evaluation process is based on weighted criteria, prioritized as follows:
+
+1. Skills & Tools Match — Required and nice-to-have technologies.
+
+
+2. Experience Relevance — Similar roles, responsibilities, domain, and impact.
+
+
+3. Seniority Level Fit — Years of experience, project complexity, leadership.
+
+
+4. Education & Certifications — Highlighted only if important to the JD.
+
+
+5. Additional Requirements — Location, work authorization, language, time zone, etc.
+
+
+
+The scoring follows a defined scale:
+
+85–100: Strong fit
+
+70–84: Possible fit
+
+Below 70: Not a fit
+
+
